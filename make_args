@@ -1,1 +1,1 @@
--f unix/Makefile --always-make STRIP="" generic
+-f unix/Makefile --always-make CFLAGS="$CFLAGS" BIND="gcc $LDFLAGS" STRIP="" generic

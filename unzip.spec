@@ -5,7 +5,7 @@
 %define keepstatic 1
 Name     : unzip
 Version  : unzip6.0
-Release  : 29
+Release  : 30
 URL      : https://sourceforge.net/projects/infozip/files/UnZip%206.x%20%28latest%29/UnZip%206.0/unzip60.tar.gz
 Source0  : https://sourceforge.net/projects/infozip/files/UnZip%206.x%20%28latest%29/UnZip%206.0/unzip60.tar.gz
 Summary  : No detailed summary available
@@ -70,7 +70,7 @@ unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1602080606
+export SOURCE_DATE_EPOCH=1602080706
 export GCC_IGNORE_WERROR=1
 ## altflags_pgo content
 ## pgo generate
@@ -112,7 +112,7 @@ export CXXFLAGS="${CXXFLAGS_GENERATE}"
 export FFLAGS="${FFLAGS_GENERATE}"
 export FCFLAGS="${FCFLAGS_GENERATE}"
 export LDFLAGS="${LDFLAGS_GENERATE}"
-make  %{?_smp_mflags}  -f unix/Makefile --always-make STRIP="" generic
+make  %{?_smp_mflags}  -f unix/Makefile --always-make CFLAGS="$CFLAGS" BIND="gcc $LDFLAGS" STRIP="" generic
 
 cp /usr/bin/x86_64-generic-linux-gcc .
 zip -9 test.zip x86_64-generic-linux-gcc
@@ -124,11 +124,11 @@ export CXXFLAGS="${CXXFLAGS_USE}"
 export FFLAGS="${FFLAGS_USE}"
 export FCFLAGS="${FCFLAGS_USE}"
 export LDFLAGS="${LDFLAGS_USE}"
-make  %{?_smp_mflags}  -f unix/Makefile --always-make STRIP="" generic
+make  %{?_smp_mflags}  -f unix/Makefile --always-make CFLAGS="$CFLAGS" BIND="gcc $LDFLAGS" STRIP="" generic
 
 
 %install
-export SOURCE_DATE_EPOCH=1602080606
+export SOURCE_DATE_EPOCH=1602080706
 rm -rf %{buildroot}
 ## install_macro start
 make -f unix/Makefile install prefix=%{buildroot}/usr
