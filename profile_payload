@@ -2,3 +2,4 @@ cp /usr/bin/x86_64-generic-linux-gcc .
 zip -9 test.zip x86_64-generic-linux-gcc
 rm x86_64-generic-linux-gcc
 ./unzip test.zip
+make -f unix/Makefile V=1 VERBOSE=1 test

@@ -1,1 +1,1 @@
-echo test
+make -f unix/Makefile V=1 VERBOSE=1 clean

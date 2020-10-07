@@ -1,1 +1,1 @@
--f unix/Makefile --always-make CFLAGS="$CFLAGS" LFLAGS1="$LDFLAGS" STRIP="" V=1 VERBOSE=1 generic
+-f unix/Makefile --always-make CFLAGS="$CFLAGS" LDFLAGS="$LDFLAGS" STRIP="" V=1 VERBOSE=1 generic
