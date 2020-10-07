@@ -1,0 +1,4 @@
+cp /usr/bin/x86_64-generic-linux-gcc .
+zip -9 test.zip x86_64-generic-linux-gcc
+rm x86_64-generic-linux-gcc
+./unzip test.zip

@@ -1,1 +1,1 @@
--f unix/Makefile STRIP="" generic
+-f unix/Makefile --always-make STRIP="" generic
