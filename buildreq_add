@@ -1,3 +1,5 @@
 # This file contains additional build requirements that did not get
 # picked up automatically. One name per line, no whitespace.
 zip
+bzip2-dev
+bzip2-staticdev
